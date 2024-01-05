@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Event Publisher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Event Generation Page</h1>
+        {% for message, category in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        <form method="POST">
+            <input type="number" name="num_records" placeholder="Number of Records" required>
+            <input type="text" name="topic_name" placeholder="Pub/Sub Topic Name" required>
+            <button type="submit">Publish</button>
+        </form>
+    </div>
+</body>
+</html>

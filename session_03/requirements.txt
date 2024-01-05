@@ -1,0 +1,4 @@
+google-cloud-pubsub==2.12.0
+Faker==13.3.4
+Flask==2.1.2  # Adding Flask for the web application
+Werkzeug
